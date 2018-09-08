@@ -54,6 +54,11 @@
             </item>
             <item>
              <property name="text">
+              <string>RedCarpet</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
               <string>Reveal.js (Presentation)</string>
              </property>
             </item>

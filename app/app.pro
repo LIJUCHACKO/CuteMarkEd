@@ -255,6 +255,19 @@ with_hoedown {
     }
 }
 
+with_redcarpet {
+    DEFINES += ENABLE_REDCARPET
+
+    macx {
+    } else:unix {
+        INCLUDEPATH += \
+            /usr/include/ruby-2.5.0 \
+            /usr/include/ruby-2.5.0/x86_64-linux
+        LIBS += -L/usr/lib -lruby
+    } else:win32 {
+    }
+}
+
 message("Using INCLUDEPATH=$$INCLUDEPATH")
 message("Using LIBS=$$LIBS")
 

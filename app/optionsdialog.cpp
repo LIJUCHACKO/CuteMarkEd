@@ -111,6 +111,10 @@ OptionsDialog::OptionsDialog(Options *opt, SnippetCollection *collection, const 
     connect(ui->snippetTextEdit, SIGNAL(textChanged()),
             this, SLOT(snippetTextChanged()));
 
+    // remove redcarpet item from converter combo box, if redcarpet is disabled
+#ifndef ENABLE_REDCARPET
+    ui->converterComboBox->removeItem(2);
+#endif
     // remove hoedown item from converter combo box, if hoedown is disabled
 #ifndef ENABLE_HOEDOWN
     ui->converterComboBox->removeItem(1);

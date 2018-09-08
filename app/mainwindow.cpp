@@ -852,6 +852,9 @@ void MainWindow::markdownConverterChanged()
 #ifdef ENABLE_HOEDOWN
     case Options::HoedownMarkdownConverter:
 #endif
+#ifdef ENABLE_REDCARPET
+    case Options::RedCarpetMarkdownConverter:
+#endif
     case Options::DiscountMarkdownConverter:
         viewSynchronizer = new HtmlViewSynchronizer(ui->webView, ui->plainTextEdit);
         connect(generator, SIGNAL(htmlResultReady(QString)),

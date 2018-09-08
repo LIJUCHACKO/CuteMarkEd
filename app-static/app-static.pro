@@ -102,3 +102,19 @@ with_hoedown {
 
     win32:INCLUDEPATH += $$PWD/../3rdparty/hoedown
 }
+
+with_redcarpet {
+    DEFINES += ENABLE_REDCARPET
+
+    HEADERS += converter/redcarpetmarkdownconverter.h
+    SOURCES += converter/redcarpetmarkdownconverter.cpp
+
+    macx {
+    } else:unix {
+        INCLUDEPATH += \
+            /usr/include/ruby-2.5.0 \
+            /usr/include/ruby-2.5.0/x86_64-linux
+        LIBS += -L/usr/lib -lruby
+    } else:win32 {
+    }
+}

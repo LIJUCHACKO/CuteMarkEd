@@ -27,6 +27,10 @@
 #include <converter/hoedownmarkdownconverter.h>
 #endif
 
+#ifdef ENABLE_REDCARPET
+#include <converter/redcarpetmarkdownconverter.h>
+#endif
+
 #include <template/template.h>
 
 #include "options.h"
@@ -138,6 +142,13 @@ void HtmlPreviewGenerator::markdownConverterChanged()
         converter = new RevealMarkdownConverter();
         converter->templateRenderer()->setCodeHighlightingStyle(style);
         break;
+
+#ifdef ENABLE_REDCARPET
+    case Options::RedCarpetMarkdownConverter:
+        converter = new RedCarpetMarkdownConverter();
+        converter->templateRenderer()->setCodeHighlightingStyle(style);
+        break;
+#endif
 
     case Options::DiscountMarkdownConverter:
     default:
