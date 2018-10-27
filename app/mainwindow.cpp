@@ -91,6 +91,8 @@ MainWindow::MainWindow(const QString &fileName, QWidget *parent) :
     setupUi();
 
     QTimer::singleShot(0, this, SLOT(initializeApp()));
+    if(fileName.length()>0)
+        load(fileName);
 }
 
 MainWindow::~MainWindow()
