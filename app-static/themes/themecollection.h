@@ -33,7 +33,7 @@ public:
     int count() const;
     const Theme &at(int offset) const;
     bool contains(const QString &name) const;
-    const Theme theme(const QString &name) const;
+    const Theme theme(QString name) const;
     QStringList themeNames() const;
 
     const QString name() const;
